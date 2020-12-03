@@ -1,9 +1,10 @@
-const api = "https://api.themoviedb.org/3/search/movie";
+const api = "https://api.themoviedb.org/3/search/multi";
 
 
 var app = new Vue({
   el: "#app",
   data: {
+    // movies: true,
     yellowstar: "bgyellow",
     newVote:"",
     search:"",
@@ -39,7 +40,7 @@ var app = new Vue({
             language: "it-IT" ,
             query: this.search ,
             page: 1 ,
-            include_adult: false
+            include_adult: false,
           }
         }
       )
@@ -51,7 +52,7 @@ var app = new Vue({
         this.arrayMovies.forEach((element,i)=>{
 
           // ***** VOTI ****
-          // trasformo i voti da 1 a 10 a 1 a 5
+          // trasformo i voti DA (1 a 10)  A  (1 a 5)
           this.arrayMovies[i].vote_average = Math.floor(this.arrayMovies[i].vote_average / 2);
 
           // ***** BANDIERE ****

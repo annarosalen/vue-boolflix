@@ -18,16 +18,33 @@
       <ul>
 
         <li v-for= "item in arrayMovies">
-          <span>Titolo: {{item.title}}</span>
-          <span>Titolo originale: {{item.original_title}}</span>
-          <img :src="item.original_language" >
-          <span>Voto: {{item.vote_average}}</span>
-          <div class="stars">
-            <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
-            <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
-            <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
-            <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
-            <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+
+          <div class="movies" v-if="item.media_type==='movie'">
+            <span>Titolo: {{item.title}}</span>
+            <span>Titolo originale: {{item.original_title}}</span>
+            <img :src="item.original_language" >
+            <span>Voto: {{item.vote_average}}</span>
+            <div class="stars">
+              <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="tv" v-else>
+            <span>Titolo: {{item.name}}</span>
+            <span>Titolo originale: {{item.original_name}}</span>
+            <img :src="item.original_language" >
+            <span>Voto: {{item.vote_average}}</span>
+            <div class="stars">
+              <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
+              <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+            </div>
           </div>
 
         </li>
