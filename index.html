@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <div class="tv" v-else>
+          <div class="tv" v-else-if="item.media_type==='tv'">
             <span>Titolo: {{item.name}}</span>
             <span>Titolo originale: {{item.original_name}}</span>
             <img :src="item.original_language" >
