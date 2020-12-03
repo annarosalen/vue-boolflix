@@ -61,6 +61,10 @@ var app = new Vue({
           // trasformo tutte le lingue in bandiere
           this.arrayAll[i].original_language = 'https://www.countryflags.io/' + this.arrayAll[i].original_language + '/flat/24.png';
 
+          // ***** POSTER ****
+          // creo link intero immagini poster
+          this.arrayAll[i].poster_path = 'https://image.tmdb.org/t/p/' + 'w185' + this.arrayAll[i].poster_path;
+          
         }); //fine ciclo forEach
 
       })
