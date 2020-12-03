@@ -4,6 +4,7 @@ const api = "https://api.themoviedb.org/3/search/movie";
 var app = new Vue({
   el: "#app",
   data: {
+    newVote:"",
     search:"",
     arrayMovies: [],
     apikey:'536b4c4fda91efaf8dcd925d42f6d67d'
@@ -42,16 +43,12 @@ var app = new Vue({
       )
       .then(response => {
         this.arrayMovies = response.data.results;
-        // for (var i = 0; i < this.arrayMovies.length; i++) {
-        //   console.log(this.arrayMovies[i].title)
-        //   console.log(this.arrayMovies[i].original_title);
-        // }
-        // this.arrayMovies.forEach((element,i)=>{
-        //   console.log(this.arrayMovies[i].title);
-        //   console.log(this.arrayMovies[i].original_title);
-        // })
-
+        this.arrayMovies.forEach((element,i)=>{
+          this.arrayMovies[i].vote_average = Math.floor(this.arrayMovies[i].vote_average / 2);
+          console.log(this.arrayMovies[i].vote_average);
+        })
       })
-    }
+    },
+
   }
 });
