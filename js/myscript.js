@@ -4,6 +4,7 @@ const api = "https://api.themoviedb.org/3/search/movie";
 var app = new Vue({
   el: "#app",
   data: {
+    yellowstar: "bgyellow",
     newVote:"",
     search:"",
     arrayMovies: [],
@@ -45,7 +46,7 @@ var app = new Vue({
         this.arrayMovies = response.data.results;
         this.arrayMovies.forEach((element,i)=>{
           this.arrayMovies[i].vote_average = Math.floor(this.arrayMovies[i].vote_average / 2);
-          console.log(this.arrayMovies[i].vote_average);
+          // console.log(this.arrayMovies[i].vote_average);
         })
       })
     },
