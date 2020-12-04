@@ -12,46 +12,56 @@
   <body>
 
     <div id="app">
-      <input type="search" name="" value="" v-model="search">
-      <button type="button" name="button" @click="cerca">CERCA</button>
 
-      <ul>
+      <nav id="search-bar">
+        <input type="search" name="" value="" v-model="search">
+        <button type="button" name="button" @click="cerca">CERCA</button>
+      </nav>
 
-        <li v-for= "item in arrayAll">
+      <div id="container">
 
-          <div class="movies" v-if="item.media_type==='movie'">
-            <img :src="item.poster_path" alt="">
-            <span>Titolo: {{item.title}}</span>
-            <span>Titolo originale: {{item.original_title}}</span>
-            <img :src="item.original_language" >
-            <span>Voto: {{item.vote_average}}</span>
-            <div class="stars">
-              <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+        <div class="movies" >
+          <h1>Film</h1>
+          <div class="container-cards">
+            <div :style="{'background-image': 'url(poster)'}" class="card" v-for= "item in arrayAll" v-if="item.media_type==='movie'">
+              <!-- <img :src="item.poster_path" alt=""> -->
+              <span>Titolo: {{item.title}}</span>
+              <span>Titolo originale: {{item.original_title}}</span>
+              <img :src="item.original_language" >
+              <span>Voto: {{item.vote_average}}</span>
+              <div class="stars">
+                <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+              </div>
             </div>
           </div>
+        </div><!--fine div movies-->
 
-          <div class="tv" v-else-if="item.media_type==='tv'">
-            <img :src="item.poster_path" alt="">
-            <span>Titolo: {{item.name}}</span>
-            <span>Titolo originale: {{item.original_name}}</span>
-            <img :src="item.original_language" >
-            <span>Voto: {{item.vote_average}}</span>
-            <div class="stars">
-              <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
-              <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+        <div class="serie tv">
+          <h1>Serie Tv</h1>
+          <div class="container-cards">
+            <div v-for="item in arrayAll" v-if="item.media_type==='tv'" >
+              <img :src="item.poster_path" alt="">
+              <span>Titolo: {{item.name}}</span>
+              <span>Titolo originale: {{item.original_name}}</span>
+              <img :src="item.original_language" >
+              <span>Voto: {{item.vote_average}}</span>
+              <div class="stars">
+                <i class="fa fa-star" :class="(item.vote_average >= 1 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 2 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 3 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 4 ) ? yellowstar : '' " aria-hidden="true"></i>
+                <i class="fa fa-star" :class="(item.vote_average >= 5 ) ? yellowstar : '' " aria-hidden="true"></i>
+              </div>
             </div>
           </div>
+        </div> <!--fine div serie tv-->
 
-        </li>
+      </div> <!--fine container-->
 
-      </ul>
     </div>
 
 
