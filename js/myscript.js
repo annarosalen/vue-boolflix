@@ -4,7 +4,6 @@ const api = "https://api.themoviedb.org/3/search/multi";
 var app = new Vue({
   el: "#app",
   data: {
-    poster:"",
     yellowstar: "bgyellow",
     search:"",
     arrayAll: [],
@@ -65,18 +64,17 @@ var app = new Vue({
 
 
           // ***** POSTER ****
-          // creo link intero immagini poster Milestone 3
-          // this.arrayAll[i].poster_path = 'https://image.tmdb.org/t/p/' + 'w185' + this.arrayAll[i].poster_path;
-
-          // Milestone 4 poster copertina
-          this.poster = 'https://image.tmdb.org/t/p/' + 'w185' + this.arrayAll[i].poster_path;
+          // creo link intero immagini poster
+          this.arrayAll[i].poster_path = 'https://image.tmdb.org/t/p/' + 'w342' + this.arrayAll[i].poster_path;
           console.log(this.poster);
 
         }); //fine ciclo forEach
 
 
       })
-    },
+    }, //fine funzione cerca
+
+
 
   }
 });

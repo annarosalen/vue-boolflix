@@ -17,6 +17,7 @@ body{
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 52px;
 }
 
 #search-bar{
@@ -27,17 +28,58 @@ body{
   flex-basis: 90%;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .container-cards{
+  height: 500px;
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  overflow-x: auto;
 }
 
+.card{
+  margin-right: 20px;
+}
 
-span{
+.copertina{
+  width: 342px;
+  height: 100%;
+}
+
+.overlay{
+  height: 100%;
+  background-color: black;
+  display: none;
+  color:white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  line-height: 25px;
+}
+
+.overlay span{
   display: block;
 }
 
+.copertina:hover .overlay{
+  display: flex;
+}
+
+.overlay .titolo{
+  font-size: 25px;
+  line-height: 45px;
+}
 .stars .bgyellow{
   color: yellow;
+}
+
+.overlay .overview{
+  font-size: 15px;
+}
+
+.serie-tv{
+  margin-top: 50px;
 }
