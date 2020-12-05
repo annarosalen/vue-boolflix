@@ -7,36 +7,80 @@
 
 body{
   height: 100vh;
-  background-image: linear-gradient( to bottom, #2e3a46 0%, #2e3a46 10%, #1e2d3b 5%, #1e2d3b 100% );
+  background-color: #1e2d3b;
   display: flex;
   justify-content: center;
 }
 
 #app{
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 52px;
 }
 
-#search-bar{
-  align-self: flex-end;
+/* SEARCH BAR */
+#nav-bar{
+  padding: 10px 20px 10px 20px;
+  text-align: right;
+  flex-basis: 10%;
+  width:100%;
+  background-color: black;
 }
 
+#nav-bar img{
+  float: left;
+  height: 50px;
+  width: 100px;
+}
+
+#nav-bar #menu{
+  float: left;
+}
+#nav-bar #menu li {
+  list-style: none;
+  padding: 15px 15px 0;
+  display: inline-block;
+}
+
+#nav-bar #menu li a{
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+#nav-bar input{
+  margin-top: 10px;
+  margin-right: 20px;
+  width: 300px;
+  padding: 5px;
+  outline: none;
+}
+
+#nav-bar button{
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+  outline: none;
+}
+
+
+/* MAIN */
 #container{
   flex-basis: 90%;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  overflow: auto;
+  padding: 40px 100px;
 }
 
 .container-cards{
-  height: 500px;
-  width: 100%;
+  height: 380px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   overflow-x: auto;
+  padding: 20px;
 }
 
 .card{
@@ -44,8 +88,8 @@ body{
 }
 
 .copertina{
-  width: 342px;
-  height: 100%;
+  width: 185px;
+  height: 278px;
 }
 
 .overlay{
@@ -56,28 +100,36 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  line-height: 25px;
+  padding: 15px;
+}
+
+.copertina:hover .overlay{
+  border: 1px solid white;
+  display: flex;
+  transform: scale(1.2);
+  z-index: 300;
 }
 
 .overlay span{
   display: block;
-}
-
-.copertina:hover .overlay{
-  display: flex;
+  padding-top: 10px;
+  font-size: 14px;
 }
 
 .overlay .titolo{
-  font-size: 25px;
-  line-height: 45px;
+  text-align: center;
+  font-size: 15px;
 }
+
 .stars .bgyellow{
   color: yellow;
 }
 
 .overlay .overview{
-  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 200px;
+  font-size: 13px;
 }
 
 .serie-tv{
