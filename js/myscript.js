@@ -8,6 +8,11 @@ var app = new Vue({
     search:"",
     arrayAll: [],
     apikey:'536b4c4fda91efaf8dcd925d42f6d67d',
+    containerCards:'container-cards',
+    card:'card',
+    arrowRight:'fa fa-chevron-right',
+    arrowLeft:'fa fa-chevron-left'
+
   },
 
   mounted: function(){
@@ -80,7 +85,53 @@ var app = new Vue({
         }
 
       }); //fine ciclo forEach
+    },
+
+    // SCROLL MOVIE
+    nextMovie: function(){
+
+      const row = document.querySelector('div.movies div.container-cards');
+
+      row.scrollLeft += row.offsetWidth;
+     
+    },
+
+    prevMovie: function(){
+
+      const row = document.querySelector('div.movies div.container-cards');
+
+      row.scrollLeft -= row.offsetWidth;
+     
+    },
+
+    // SCROLL SERIE
+    nextSerie: function(){
+
+      const row = document.querySelector('div.serie-tv div.container-cards');
+      
+      row.scrollLeft += row.offsetWidth;
+     
+    },
+
+    prevSerie: function(){
+
+      const row = document.querySelector('div.serie-tv div.container-cards');
+
+      row.scrollLeft -= row.offsetWidth;
+     
     }
 
   }
 });
+
+// SCROLL CON JQUERY
+
+// const row = document.querySelector('.container-cards');
+
+// let arrowRight= document.querySelector('.fa-chevron-right');
+
+// arrowRight.addEventListener('click', () => {
+
+//   row.scrollLeft += row.offsetWidth;
+
+// });

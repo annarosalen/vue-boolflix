@@ -74,17 +74,41 @@ body{
   padding: 40px 100px;
 }
 
+.movies, .serie-tv{
+  position: relative;
+}
+
+.next{
+  position:absolute;
+  right:-50px;
+  top: 200px;
+}
+
+.prev{
+  position:absolute;
+  left:-50px;
+  top: 200px;  
+}
+
+.fa-chevron-right, .fa-chevron-left{
+  font-weight: 900;
+  font-size: 40px;
+  cursor: pointer;
+}
+
 .container-cards{
   height: 380px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  overflow-x: auto;
+  overflow: hidden;
+  scroll-behavior: smooth;
   padding: 20px;
 }
 
 .card{
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .copertina{
