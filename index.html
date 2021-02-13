@@ -34,8 +34,8 @@
           <div class="prev">
             <i class="fa fa-chevron-left" @click="prevMovie" aria-hidden="true"></i>
           </div>
-          <div :class="containerCards">
-            <div  class="card" v-for= "item in arrayAll" v-if="item.media_type==='movie'" >
+          <div :class="containerCards" >
+            <div  class="card" v-for= "(item, index) in arrayMovie" >
               <div class="copertina" :style="{'background-image': 'url('+item.poster_path+')'}">
                 <div class="overlay">
                   <span class="titolo"><strong>{{item.title}}</strong></span>
@@ -65,7 +65,7 @@
             <i :class="arrowLeft" @click="prevSerie" aria-hidden="true"></i>
           </div>
           <div :class="containerCards">
-            <div :class="card" v-for="item in arrayAll" v-if="item.media_type==='tv'"  >
+            <div :class="card" v-for="item in arrayTv" >
               <div class="copertina" :style="{'background-image': 'url('+item.poster_path+')'}">
                 <div class="overlay">
                   <span class="titolo"><strong>{{item.name}}</strong></span>
@@ -97,7 +97,7 @@
 
 
 
-    <script type="text/javascript" src="js/myscript.js">
+    <script type="text/javascript" src="js/myscripttest.js">
     </script>
   </body>
 </html>

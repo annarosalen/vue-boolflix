@@ -28,6 +28,7 @@ var app = new Vue({
       }
     )
     .then(response => {
+      console.log(response)
       this.arrayAll = response.data.results;
       this.loop();
     })
