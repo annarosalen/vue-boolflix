@@ -166,11 +166,12 @@ body{
 .copertina{
   width: 185px;
   height: 278px;
+  transition: 0.2s;
 }
 
 .overlay{
   height: 100%;
-  background-color: black;
+  background: linear-gradient(300deg, rgba(0,0,0,2) 10%, rgba(0,0,0,0.7) 10%);
   display: none;
   color:white;
   flex-direction: column;
@@ -182,8 +183,11 @@ body{
 .copertina:hover .overlay{
   border: 1px solid white;
   display: flex;
-  transform: scale(1.2);
   z-index: 300;
+}
+
+.copertina:hover{
+  transform: scale(1.2);
 }
 
 .overlay span{
