@@ -34,7 +34,8 @@
           <div class="prev">
             <i class="fa fa-chevron-left" @click="prevMovie" aria-hidden="true"></i>
           </div>
-          <div :class="containerCards" >
+          <div class="container-cards" ref="movieCarousel" >
+
             <div  class="card" v-for= "(item, index) in arrayMovie" >
               <div class="copertina" :style="{'background-image': 'url('+item.poster_path+')'}">
                 <div class="overlay">
@@ -52,7 +53,8 @@
                   <p class="overview">Overview: {{item.overview}}</p>
                 </div>
               </div>
-            </div><!--fine cards-->
+            </div><!--fine card-->
+  
           </div><!--fine container-cards-->
           <div class="next">
             <i class="fa fa-chevron-right" @click="nextMovie"  aria-hidden="true"></i>
@@ -62,10 +64,11 @@
         <div class="serie-tv">
           <h1>Serie Tv</h1>
           <div class="prev">
-            <i :class="arrowLeft" @click="prevSerie" aria-hidden="true"></i>
+            <i class="fa fa-chevron-left" @click="prevSerie" aria-hidden="true"></i>
           </div>
-          <div :class="containerCards">
-            <div :class="card" v-for="item in arrayTv" >
+          <div class="container-cards" ref='tvCarousel'>
+            
+            <div class="card" v-for="item in arrayTv" >
               <div class="copertina" :style="{'background-image': 'url('+item.poster_path+')'}">
                 <div class="overlay">
                   <span class="titolo"><strong>{{item.name}}</strong></span>
@@ -84,10 +87,11 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div><!--fine card-->
+     
+          </div><!--fine container-cards-->
           <div class="next">
-            <i :class="arrowRight" @click="nextSerie" aria-hidden="true"></i>
+            <i class="fa fa-chevron-right" @click="nextSerie" aria-hidden="true"></i>
           </div>
         </div> <!--fine div serie tv-->
 

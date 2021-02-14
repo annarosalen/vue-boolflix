@@ -11,10 +11,6 @@ var app = new Vue({
     arrayMovie:[],
     arrayTv:[],
     apikey:'536b4c4fda91efaf8dcd925d42f6d67d',
-    containerCards:'container-cards',
-    card:'card',
-    arrowRight:'fa fa-chevron-right',
-    arrowLeft:'fa fa-chevron-left'
 
   },
 
@@ -68,8 +64,7 @@ var app = new Vue({
         this.arrayResults.forEach((item,x) =>{
           
           // ***** VOTI ****
-          // trasformo i voti DA (1 a 10)  A  (1 a 5)
-          
+          // trasformo i voti DA (1 a 10)  A  (1 a 5)          
           item.vote_average = Math.floor(item.vote_average / 2);
 
           // ***** BANDIERE ****
@@ -96,46 +91,47 @@ var app = new Vue({
 
       this.arrayMovie = this.arrayAll[0].data.results;
       this.arrayTv = this.arrayAll[1].data.results;
+
     }, //fine details
 
     // SCROLL MOVIE
     nextMovie: function(){
 
-      const row = document.querySelector('div.movies div.container-cards');
+      const row = this.$refs['movieCarousel'];
 
-      row.scrollLeft += row.offsetWidth;
+      row.scrollLeft += 1200;
      
     },
 
     prevMovie: function(){
 
-      const row = document.querySelector('div.movies div.container-cards');
+      const row = this.$refs['movieCarousel'];
 
-      row.scrollLeft -= row.offsetWidth;
+      row.scrollLeft -= 1200;
      
     },
 
     // SCROLL SERIE
     nextSerie: function(){
 
-      const row = document.querySelector('div.serie-tv div.container-cards');
-      
-      row.scrollLeft += row.offsetWidth;
+      const row = this.$refs['tvCarousel'];
+
+      row.scrollLeft += 1200;
      
     },
 
     prevSerie: function(){
 
-      const row = document.querySelector('div.serie-tv div.container-cards');
-
-      row.scrollLeft -= row.offsetWidth;
+      const row = this.$refs['tvCarousel'];
+      
+      row.scrollLeft -= 1200;
      
     }
 
   }
 });
 
-// SCROLL CON JQUERY
+// SCROLL CON JS
 
 // const row = document.querySelector('.container-cards');
 
